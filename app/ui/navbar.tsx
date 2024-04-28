@@ -38,7 +38,7 @@ export function NavigationBar() {
     <Navbar
       theme={linkStyle}
       fluid
-      className="fixed top-0 w-full bg-primaryColor"
+      className="fixed top-0 z-50 w-full bg-primaryColor"
     >
       <Navbar.Brand as={Link} href="/">
         <MotherLogo />

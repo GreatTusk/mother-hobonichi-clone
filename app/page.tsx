@@ -1,6 +1,17 @@
 import { ProductsGrid } from "@/app/ui/products-grid";
+import { SearchBar } from "@/app/ui/search-bar";
 
-export default function MyPage() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query || "";
+  const currentPage = Number(searchParams?.page) || 1;
+
   return (
     <main>
       <section className="bg-white dark:bg-gray-900">
@@ -14,7 +25,10 @@ export default function MyPage() {
               needs of your audience early and often.
             </p>
           </div>
-          <ProductsGrid />
+          <div className="mx-auto mb-8 max-w-screen-sm text-center">
+            <SearchBar />
+          </div>
+          <ProductsGrid currentPage={currentPage} query={query} />
         </div>
       </section>
     </main>

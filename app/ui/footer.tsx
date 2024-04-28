@@ -21,7 +21,7 @@ export function PageFooter() {
     <Footer
       theme={customFooterTheme}
       container
-      className="bg-primaryColor text-secondaryColor"
+      className="bottom-0 bg-primaryColor text-secondaryColor"
     >
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">

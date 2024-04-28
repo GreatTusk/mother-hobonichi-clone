@@ -75,6 +75,7 @@ export function ProductsGrid() {
               imageSrc={product.imageSrc}
               productName={product.productName}
               price={product.price}
+              key={product.imageSrc}
             />
           ),
         )}
