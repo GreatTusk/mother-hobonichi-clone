@@ -5,8 +5,8 @@ export default function MotherLogo() {
     <Image
       src="/logo.png"
       alt="Mother HOBONICHI Logo"
-      width={220}
-      height={38.5}
+      width={232}
+      height={40.5}
     />
   );
 }
