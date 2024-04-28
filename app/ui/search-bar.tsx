@@ -30,7 +30,7 @@ export function SearchBar() {
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
           <svg
-            className="h-4 w-4 text-gray-500 dark:text-gray-400"
+            className="size-4 text-gray-500 dark:text-gray-400"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -51,7 +51,7 @@ export function SearchBar() {
           className="block w-full rounded-lg border border-gray-300
           bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-primaryColor
           focus:ring-primaryColor dark:border-gray-600 dark:bg-gray-700 dark:text-white
-          dark:placeholder-gray-400 dark:focus:border-primaryColor dark:focus:ring-primaryColor"
+          dark:placeholder:text-gray-400 dark:focus:border-primaryColor dark:focus:ring-primaryColor"
           placeholder="MOTHER 3 Global Release..."
           required
           onChange={(e) => handleSearch(e.target.value)}
