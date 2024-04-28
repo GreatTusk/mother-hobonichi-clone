@@ -1,5 +1,6 @@
 import { ProductsGrid } from "@/app/ui/products-grid";
 import { SearchBar } from "@/app/ui/search-bar";
+import { CardSkeleton } from "@/app/ui/skeletons";
 
 export default async function Page({
   searchParams,

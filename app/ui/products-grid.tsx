@@ -1,8 +1,9 @@
 "use client";
 import { CardComponent } from "@/app/ui/product-card";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { CustomFlowbiteTheme, Pagination } from "flowbite-react";
 import { products } from "@/script/seed";
+import { CardSkeleton } from "@/app/ui/skeletons";
 
 export function ProductsGrid() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,26 +61,36 @@ export function ProductsGrid() {
 
   return (
     <>
-      <div
-        className="mx-auto grid justify-center gap-8 p-4 md:grid-cols-2
-      md:px-8 lg:mx-auto lg:max-w-screen-lg  lg:grid-cols-3"
+      <Suspense
+        fallback={
+          <>
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+          </>
+        }
       >
-        {productsOnPage.map(
-          (product: {
-            imageSrc: string;
-            productName: string;
-            price: number;
-          }) => (
-            <CardComponent
-              numStars={5}
-              imageSrc={product.imageSrc}
-              productName={product.productName}
-              price={product.price}
-              key={product.imageSrc}
-            />
-          ),
-        )}
-      </div>
+        <div
+          className="mx-auto grid justify-center gap-8 p-4 md:grid-cols-2
+      md:px-8 lg:mx-auto lg:max-w-screen-lg  lg:grid-cols-3"
+        >
+          {productsOnPage.map(
+            (product: {
+              imageSrc: string;
+              productName: string;
+              price: number;
+            }) => (
+              <CardComponent
+                numStars={5}
+                imageSrc={product.imageSrc}
+                productName={product.productName}
+                price={product.price}
+                key={product.imageSrc}
+              />
+            ),
+          )}
+        </div>
+      </Suspense>
       <PaginationComponent
         totalPages={Math.ceil(products.length / itemsPerPage)}
       />
