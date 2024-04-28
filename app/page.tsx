@@ -28,7 +28,7 @@ export default async function Page({
           <div className="mx-auto mb-8 max-w-screen-sm text-center">
             <SearchBar />
           </div>
-          <ProductsGrid currentPage={currentPage} query={query} />
+          <ProductsGrid />
         </div>
       </section>
     </main>
