@@ -1,7 +1,12 @@
-"use client";
-
 import Link from "next/link";
-import { CustomFlowbiteTheme, Navbar } from "flowbite-react";
+import {
+  CustomFlowbiteTheme,
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarLink,
+  NavbarToggle,
+} from "flowbite-react";
 import MotherLogo from "@/app/ui/motherLogo";
 
 const linkStyle: CustomFlowbiteTheme["navbar"] = {
@@ -40,18 +45,18 @@ export function NavigationBar() {
       fluid
       className="fixed top-0 z-50 w-full bg-primaryColor"
     >
-      <Navbar.Brand as={Link} href="/">
+      <NavbarBrand as={Link} href="/">
         <MotherLogo />
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="/">Home</Navbar.Link>
-        <Navbar.Link href="/">News</Navbar.Link>
-        <Navbar.Link href="/">Articles</Navbar.Link>
-        <Navbar.Link href="/">Shop</Navbar.Link>
-        <Navbar.Link href="/">About the Game</Navbar.Link>
-        <Navbar.Link href="/">Newsletter</Navbar.Link>
-      </Navbar.Collapse>
+      </NavbarBrand>
+      <NavbarToggle />
+      <NavbarCollapse>
+        <NavbarLink href="/">Home</NavbarLink>
+        <NavbarLink href="/">News</NavbarLink>
+        <NavbarLink href="/">Articles</NavbarLink>
+        <NavbarLink href="/">Shop</NavbarLink>
+        <NavbarLink href="/">About the Game</NavbarLink>
+        <NavbarLink href="/">Newsletter</NavbarLink>
+      </NavbarCollapse>
     </Navbar>
   );
 }
