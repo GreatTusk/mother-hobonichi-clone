@@ -2,6 +2,8 @@ import { ProductsGrid } from "@/app/ui/products-grid";
 import { SearchBar } from "@/app/ui/search-bar";
 import { fetchProductsPages } from "@/app/lib/data";
 import Pagination from "@/app/ui/pagination";
+import { CardSkeleton } from "@/app/ui/skeletons";
+import { Suspense } from "react";
 
 export default async function Page({
   searchParams,
@@ -13,8 +15,8 @@ export default async function Page({
 }) {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
-
   const totalPages = await fetchProductsPages(query);
+
   console.log(query);
   console.log(totalPages);
   console.log(currentPage);
@@ -35,7 +37,17 @@ export default async function Page({
           <div className="mx-auto mb-8 max-w-screen-sm text-center">
             <SearchBar />
           </div>
-          <ProductsGrid query={query} currentPage={currentPage} />
+          <Suspense
+            fallback={
+              <>
+                <CardSkeleton />
+                <CardSkeleton />
+                <CardSkeleton />
+              </>
+            }
+          >
+            <ProductsGrid query={query} currentPage={currentPage} />
+          </Suspense>
           <Pagination totalPages={totalPages} />
         </div>
       </section>
