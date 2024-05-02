@@ -7,12 +7,13 @@ export async function fetchProducts(currentPage: number, query: string) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const productQueryResult = await sql<Product>`
-            SELECT id,
+            SELECT ID,
                    name,
                    price,
                    image_url
             FROM PRODUCTS
             WHERE name ILIKE ${`%${query}%`}
+               OR price::text ILIKE ${`%${query}%`}
             ORDER BY name DESC
             LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
         `;

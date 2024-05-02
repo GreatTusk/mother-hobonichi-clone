@@ -1,8 +1,5 @@
 "use client";
 import { CardComponent } from "@/app/ui/product-card";
-import { Suspense } from "react";
-
-import { CardSkeleton } from "@/app/ui/skeletons";
 import { fetchProducts } from "@/app/lib/data";
 import { Product } from "@/app/lib/definitions";
 
@@ -21,7 +18,7 @@ export async function ProductsGrid({
         className="mx-auto grid justify-center gap-8 p-4 md:grid-cols-2
       md:px-8 lg:mx-auto lg:max-w-screen-lg  lg:grid-cols-3"
       >
-        {products.map((product: Product) => (
+        {products?.map((product: Product) => (
           <CardComponent
             numStars={5}
             imageSrc={product.image_url}
