@@ -1,4 +1,3 @@
-"use client";
 import { CardComponent } from "@/app/ui/product-card";
 import { fetchProducts } from "@/app/lib/data";
 import { Product } from "@/app/lib/definitions";

@@ -17,10 +17,6 @@ export default async function Page({
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchProductsPages(query);
 
-  console.log(query);
-  console.log(totalPages);
-  console.log(currentPage);
-
   return (
     <main>
       <section className="bg-white dark:bg-gray-900">
