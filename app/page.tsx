@@ -34,12 +34,13 @@ export default async function Page({
             <SearchBar />
           </div>
           <Suspense
+            key={query + currentPage}
             fallback={
-              <>
+              <div className="mx-auto grid justify-center gap-8 p-4 md:grid-cols-2 md:px-8 lg:mx-auto lg:max-w-screen-lg  lg:grid-cols-3">
                 <CardSkeleton />
                 <CardSkeleton />
                 <CardSkeleton />
-              </>
+              </div>
             }
           >
             <ProductsGrid query={query} currentPage={currentPage} />

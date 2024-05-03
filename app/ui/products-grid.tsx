@@ -24,6 +24,7 @@ export async function ProductsGrid({
             productName={product.name}
             price={product.price}
             key={product.id}
+            id={product.id}
           />
         ))}
       </div>
