@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { fetchProductById } from "@/app/lib/data";
 import ImageHeading from "@/app/ui/products/image-heading";
+import { Breadcrumbs } from "@/app/ui/products/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Edit invoice",
@@ -18,7 +19,8 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <main>
       <div className="mx-auto max-w-screen-xl px-4 pb-12 pt-24 lg:px-6">
-        <ImageHeading product={product} />
+        <Breadcrumbs product_name={product.name} />
+        <ImageHeading product={product} isInverted={false} />
       </div>
     </main>
   );

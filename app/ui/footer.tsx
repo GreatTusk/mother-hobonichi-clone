@@ -1,5 +1,4 @@
 import {
-  CustomFlowbiteTheme,
   Footer,
   FooterBrand,
   FooterCopyright,
@@ -7,19 +6,12 @@ import {
   FooterLink,
   FooterLinkGroup,
 } from "flowbite-react";
-
-const customFooterTheme: CustomFlowbiteTheme["footer"] = {
-  root: {
-    base: "w-full bg-white shadow dark:bg-gray-800 md:flex md:items-center md:justify-between",
-    container: "w-full p-6",
-    bgDark: "bg-gray-800",
-  },
-};
+import { footer_theme } from "@/app/lib/themes";
 
 export function PageFooter() {
   return (
     <Footer
-      theme={customFooterTheme}
+      theme={footer_theme}
       container
       className="bottom-0 bg-primaryColor text-secondaryColor"
     >
