@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main>
       <div className="mx-auto max-w-screen-xl px-4 pb-12 pt-24 lg:px-6">
         <Breadcrumbs product_name={product.name} />
-        <ImageHeading product={product} isInverted={false} />
+        <ImageHeading product={product} />
       </div>
     </main>
   );
